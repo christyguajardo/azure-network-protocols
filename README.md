@@ -78,6 +78,7 @@ Click on Create
 </p>
 <p>
 Complete all of the required fields, which are designated with an asterik. This only includes the first screen under the basic tab. 
+Continue to click through the tabs then create on the last tab. Virtual Machine should be validated and deployed. 
 </p>
 <br />
 
