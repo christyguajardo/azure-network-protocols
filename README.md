@@ -24,6 +24,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Ubuntu Server 20.04
 
 <h2>High-Level Steps</h2>
+Virtual Machine Set Up: '🖥️
 
 Step 1: Set Up Azure Virtual Machines and Network Security Groups '🚀
 
@@ -47,12 +48,6 @@ Generate network traffic by accessing web pages, pinging other VMs, or using oth
 
 Step 4: Stop the Capture:
 Stop the packet capture in Wireshark after capturing sufficient traffic.
-
-
-- Step 1
-- Step 2
-- Step 3
-- Step 4
 
 <h2>Actions and Observations</h2>
 
