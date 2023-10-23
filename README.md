@@ -156,10 +156,52 @@ Re-enable ICMP traffic for the Network Security Group your Ubuntu VM is using
 
 
 Next we are going to filter for SSH Traffic. (SecureShell)
+From Windows VM SS
+
+In Powershell: 
+Type commands (ssh username@privateipaddressof VM2), which is the Ubunto VM
+In this case, at command line type: ssh labuser@10.2.0.5
+
+![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/0af0d708-064e-4e51-a239-9765dd8669bd)
+
+![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/3c687b36-916d-4ffe-bdcd-2dbcc503e855)
+
+Next, in order to stop observing traffic, at command line in Powershell type: exit 
+
+![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/9205a8d3-4fa2-4fdd-b910-21440a840d26)
 
 
+Next we are going to filter for DHCP Traffic 
+DHCP is used to automatically assign you an ip address
+Go to wireshark 
+
+![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/fcb9b77a-4f52-402b-8467-21714297bb0c)
 
 
+Type in ipconfig /renew – now observe traffic. We got our ip address reissued to us, see powershell printscreen
+
+![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/e395ba5b-8178-4f54-a562-af0cc03e2adf)
+
+
+Observe traffic
+
+![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/3fce9d9e-58f7-4123-869a-60bb12dfb62d)
+
+
+To observe traffic for DNS 
+Powershell:  nslookupwww.google.com ; also observe Disney and Google traffic 
+
+![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/d88eea5a-2d53-4245-9da4-a70dfc021488)
+
+![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/bec9bc71-81bb-41ab-8299-cce7f6ee61d6)
+
+
+To observe traffic for RDP
+
+![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/29243ac8-f073-453b-b8ff-896c36cdc120)
+
+
+That's all the traffic to be observed for this demonstration! 
 
  Complete all of the required fields, which are designated with an asterik. This only includes the first screen under the basic tab. 
 Continue to click through the tabs then create on the last tab. Virtual Machine should be validated and deployed. 
