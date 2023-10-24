@@ -145,10 +145,9 @@ So let's head back to Azure in order to set up firewall (this will disable ICMP 
   '🪐Select Any for Source & Destination
   
   '🪐Select deny in order for the ping to stop. This will block the ICMP traffic
+  
+  '🪐Make sure that you number the priority prior to any/other rules in group 
 
-  Go back to VM1 remote desktop to see if it’s been timed out – stopped. It’s getting blocked by VM2’s firewall
-
-Make sure that you number the priority prior to any/other rules in group 
 This will stop traffic 
 
 ![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/4c33476f-ae31-4b09-b331-a61040719863)
@@ -157,7 +156,7 @@ This will stop traffic
 
 ![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/5d19fd00-b3e1-4bdb-8bf8-ddb721c6d3fc)
 
-Go back to VM1 remote desktop to see if it’s been timed out – stopped. It’s getting blocked by VM2’s firewall
+Go back to VM1 remote desktop to see if it’s been timed out – stopped. Traffic is now getting blocked by VM2’s firewall
 
 ![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/1d2c6782-2077-4e75-b845-3a9f195d3ce2)
 
@@ -205,24 +204,28 @@ Next we are going to filter for SSH Traffic. (SecureShell)
 From Windows VM SS
 
 In Powershell: 
-Type commands (ssh username@privateipaddressof VM2), which is the Ubunto VM
+
+At command line type: ssh username@privateipaddressof VM2  
 In this case, at command line type: ssh labuser@10.2.0.5
 
 ![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/0af0d708-064e-4e51-a239-9765dd8669bd)
 
 ![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/3c687b36-916d-4ffe-bdcd-2dbcc503e855)
 
-Next, in order to stop observing traffic, at command line in Powershell type: exit 
+Next, in order to stop observing traffic, at command line type: exit 
 
 ![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/9205a8d3-4fa2-4fdd-b910-21440a840d26)
 
 
 Next we are going to filter for DHCP Traffic 
-DHCP is used to automatically assign you an ip address
+
+DHCP is used to automatically assign an ip address
+
 Go to wireshark 
 
-![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/fcb9b77a-4f52-402b-8467-21714297bb0c)
+Filter/type in DHCP
 
+![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/fcb9b77a-4f52-402b-8467-21714297bb0c)
 
 Type in ipconfig /renew – now observe traffic. We got our ip address reissued to us, see powershell printscreen
 
@@ -235,7 +238,12 @@ Observe traffic
 
 
 To observe traffic for DNS 
-Powershell:  nslookupwww.google.com ; also observe Disney and Google traffic 
+Powershell:  
+
+At command line type: nslookupwww.google.com 
+Also at next command line type: nslookupwww.disney.com 
+
+We are now able to observe Disney and Google traffic 
 
 ![image](https://github.com/christyguajardo/azure-network-protocols/assets/147533626/d88eea5a-2d53-4245-9da4-a70dfc021488)
 
